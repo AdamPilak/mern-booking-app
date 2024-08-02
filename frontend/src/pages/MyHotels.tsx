@@ -28,8 +28,8 @@ const MyHotels = () => {
 					Add Hotel
 				</Link>
 			</span>
-			<div className="grid cols-1 gap-8">
-				{hotelData?.map(hotel => (
+			{!hotelData || hotelData.length === 0 ? <h2 className="mt-">No Hotels found</h2> : <div className="grid cols-1 gap-8">
+				{hotelData.map(hotel => (
 					<div className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5">
 						<h2 className="text-2xl font-bold">{hotel.name}</h2>
 						<div className="whitespace-pre-line">{hotel.description}</div>
@@ -64,7 +64,7 @@ const MyHotels = () => {
 						</span>
 					</div>
 				))}
-			</div>
+			</div>}
 		</div>
 	)
 }
